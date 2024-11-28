@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Michael Bibal | Design Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <script src="https://kit.fontawesome.com/621d9b9779.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" defer></script>
+    <script src="js/index.js" type="module" defer></script>
+</head>
+
+
+<body class="body-fade">
+
+    <nav class="mobile-nav">
+        <!--Navbar Path Graphic and Animation-->
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 900 253" style="enable-background:new 0 0 900 253;" xml:space="preserve">
+
+            <!--Viewbox Animations-->
+            <animate id="mobnav-show" attributeName="viewBox" dur="1s" begin="indefinite" fill="freeze"
+                calcMode="spline" keyTimes="0; 1" keySplines=".08,.61,.43,.98"
+                values="0 0 900 253; 0 0 900 800" />
+            <animate id="mobnav-hide" attributeName="viewBox" dur="1.5s" begin="indefinite" fill="freeze"
+            calcMode="spline" keyTimes="0; 1" keySplines=".08,.61,.43,.98"
+            values="0 0 900 800; 0 0 900 253" />
+
+            <!--Clip Path and Animations-->
+            <clipPath id="mobnav">
+                <path d="M0,924.4V0h900 v250.4 c30.3-29.7-39.5-48-143.3-48H0">
+                    <animate id="mobnav-elem-show" dur="1.5s" begin="indefinite" fill="freeze" attributeName="d" calcMode="spline"
+                        keyTimes="0; 1" keySplines=".08,.61,.43,.98" to="M0,924.4V0h900v790.4c30.3-29.7-39.5-48-143.3-48H0" />
+                    <animate id="mobnav-elem-hide" dur="1s" begin="indefinite" fill="freeze" attributeName="d" calcMode="spline"
+                        keyTimes="0; 1" keySplines=".08,.61,.43,.98" to="M0,924.4V0h900v250.4c30.3-29.7-39.5-48-143.3-48H0" />
+                </path>
+            </clipPath>
+
+            <!--Mobile Nav Elements-->
+            <foreignObject x="0px" y="0px" width="900px" height="100%" xmlns="http://www.w3.org/1999/xhtml">
+                <div class="mobnav-util">
+                    <div class="mobile-nav-wrapper">
+                        <a href="index.html" class="mobnav-logo touch-active-anim anim">
+                            <img src="images/logo_black_new_mark.png" alt="logo">
+                        </a>
+                        <div class="mobnav-bars touch-active-anim anim">
+                            <i class="fa-solid fa-bars"></i>
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+
+                    </div>
+                    <div class="mobile-elem-wrapper">
+                        <ul class="mobile-link-list">
+                            <li class="touch-active-anim anim"><a href="index.html"><div>Home</div></a></li>
+                            <li class="touch-active-anim anim"><a href="index.html#works" class="same-page-link"><div>Works</div></a></li>
+                            <li class="touch-active-anim anim"><a href="about.html"><div>About</div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </foreignObject>
+        </svg>
+    </nav>
+
+    <nav class="normal-nav">
+        <a href="/index.html" class="enable-pointer-events">
+            <img class="nav-home-static enable-pointer-events" src="images/logo_black_new-min.png" alt="jan michael bibal logo">
+        </a>
+
+        <!--Navbar Path Graphic and Animation-->
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            id="navbar_graphic" height="100%" viewBox="500 0 306.2 1000">
+
+            <animate id="nav-workssection-show" attributeName="viewBox" dur="1s" begin="indefinite" fill="freeze"
+                calcMode="spline" keyTimes="0; 1" keySplines=".08,.61,.43,.98"
+                values="300 0 506.2 1000; 500 0 306.2 1000" />
+            <animate id="nav-workssection-out" attributeName="viewBox" dur="1s" begin="indefinite" fill="freeze"
+                calcMode="spline" keyTimes="0; 1" keySplines=".08,.61,.43,.98" to="300 0 506.2 1000" />
+
+            <path class="nav-graphic-paths" id="long-boi"
+            d="M806.2,0c-20.4,28.6-31.7,70.7-31.7,123v910.9c0,103.2-42.8,165.5-78.7,199.6c-44.5,42.3 -105.1,66.5 -166.2,66.5h-506.5V700.1c0-89.1-25.9-166.5-75.2-225.3c-2.5-3-5-5.9-7.6-8.7c-2.1-2.3-4.2-4.6-6.4-6.8c-0.6-0.6-1.3-1.3-1.9-1.9c-29.2-29.6-63.8-52.1-101.8-66.4V280.4c0-54.5,10.8-103.7,31.8-145.5c1.5-3,3-5.8,4.6-8.7c1.6-3,3.3-5.8,5-8.7c9.8-16.4,21.4-31.5,34.6-45.1C-48.7,25.7, 12.5,0, 78.4,0H806.2z">
+                <animate id="nav-show" dur="0.5s" begin="indefinite" fill="freeze" attributeName="d" calcMode="spline"
+                    keyTimes="0; 1" keySplines=".08,.61,.43,.98" to="M806.2,0c-20.4,28.6-31.7,70.7-31.7,123v910.9c0,103.2-42.8,165.5-78.7,199.6c-44.5,42.3 -105.1,66.5 -166.2,66.5h-506.5V700.1c0-89.1-25.9-166.5-75.2-225.3c-2.5-3-5-5.9-7.6-8.7c-2.1-2.3-4.2-4.6-6.4-6.8c-0.6-0.6-1.3-1.3-1.9-1.9c-29.2-29.6-63.8-52.1-101.8-66.4V280.4c0-54.5,10.8-103.7,31.8-145.5c1.5-3,3-5.8,4.6-8.7c1.6-3,3.3-5.8,5-8.7c9.8-16.4,21.4-31.5,34.6-45.1C-48.7,25.7, 12.5,0, 78.4,0H806.2z" />
+                <animate id="nav-out" dur="0.5s" begin="indefinite" fill="freeze" attributeName="d" calcMode="spline"
+                    keyTimes="0; 1" keySplines=".08,.61,.43,.98" to="M806.2,0c-20.4,28.6-31.7,70.7-31.7,123v610.9c0,103.2-42.8,165.5-78.7,199.6c-44.5,42.3-105.1,66.5-166.2,66.5h-6.5V700.1c0-89.1-25.9-166.5-75.2-225.3c-2.5-3-5-5.9-7.6-8.7c-2.1-2.3-4.2-4.6-6.4-6.8c-0.6-0.6-1.3-1.3-1.9-1.9c-29.2-29.6-63.8-52.1-101.8-66.4V280.4c0-54.5,10.8-103.7,31.8-145.5c1.5-3,3-5.8,4.6-8.7c1.6-3,3.3-5.8,5-8.7c9.8-16.4,21.4-31.5,34.6-45.1C451.3,25.7,512.5,0,578.4,0H806.2z" />
+            </path>
+
+            <path class="nav-graphic-paths" id="short-boi" d="M476,700.1V1000H276.6c-61.1,0-121.7-24.3-166.2-66.5c-35.9-34.1-78.7-96.4-78.7-199.6V542.7c0-52.3-11.3-94.4-31.7-123h227.8c15.5,0,30.7,1.4,45.5,4.2c2.9,0.6,5.8,1.2,8.7,1.8c0.4,0.1,0.7,0.2,1.1,0.3c2.5,0.6,5.1,1.2,7.6,1.9c5.4,1.4,10.7,3,15.9,4.9c8,2.7,15.9,5.9,23.6,9.5c9.5,4.4,18.7,9.5,27.5,15.2c4.3,2.8,8.5,5.7,12.6,8.7c3.8,2.8,7.5,5.7,11.1,8.7c6.4,5.4,12.6,11.1,18.5,17.2C449.7,543.4,476,615.3,476,700.1z">
+                <animate class="nav-other-paths-show" attributeName="d" dur="0.5s" fill="freeze" begin="indefinite"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".08,.65,.43,.98" to="M-24,700.1V1000H-223.4c-61.1,0-121.7-24.3-166.2-66.5c-35.9-34.1-78.7-96.4-78.7-199.6V542.7c0-52.3-11.3-94.4-31.7-123h227.8c15.5,0,30.7,1.4,45.5,4.2c2.9,0.6,5.8,1.2,8.7,1.8c0.4,0.1,0.7,0.2,1.1,0.3c2.5,0.6,5.1,1.2,7.6,1.9c5.4,1.4,10.7,3,15.9,4.9c8,2.7,15.9,5.9,23.6,9.5c9.5,4.4,18.7,9.5,27.5,15.2c4.3,2.8,8.5,5.7,12.6,8.7c3.8,2.8,7.5,5.7,11.1,8.7c6.4,5.4,12.6,11.1,18.5,17.2C-50.3,543.4,-24,615.3,-24,700.1z" />
+                <animate class="nav-other-paths-out" attributeName="d" dur="0.5s" fill="freeze" calcMode="spline"
+                    keyTimes="0; 1" keySplines=".08,.61,.43,.98" begin="indefinite" to="M476,700.1V1000H276.6c-61.1,0-121.7-24.3-166.2-66.5c-35.9-34.1-78.7-96.4-78.7-199.6V542.7c0-52.3-11.3-94.4-31.7-123h227.8c15.5,0,30.7,1.4,45.5,4.2c2.9,0.6,5.8,1.2,8.7,1.8c0.4,0.1,0.7,0.2,1.1,0.3c2.5,0.6,5.1,1.2,7.6,1.9c5.4,1.4,10.7,3,15.9,4.9c8,2.7,15.9,5.9,23.6,9.5c9.5,4.4,18.7,9.5,27.5,15.2c4.3,2.8,8.5,5.7,12.6,8.7c3.8,2.8,7.5,5.7,11.1,8.7c6.4,5.4,12.6,11.1,18.5,17.2C449.7,543.4,476,615.3,476,700.1z" />
+            </path>
+
+            <path class="nav-graphic-paths" id="smol-left" d="M273.3,372.7v3.4c-14.9-2.3-30.1-3.5-45.5-3.5H84.3v-62.8c0-27-7.5-46.2-20.7-54.9h104.8c26.7,0,52.9,10.7,71.7,29.3C261.8,305.6,273.3,336.2,273.3,372.7z">
+                <animate class="nav-other-paths-show" attributeName="d" dur="0.5s" fill="freeze" begin="indefinite"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".08,.65,.43,.98" to="M-226.7,372.7v3.4c-14.9-2.3-30.1-3.5-45.5-3.5H-415.7v-62.8c0-27-7.5-46.2-20.7-54.9h104.8c26.7,0,52.9,10.7,71.7,29.3C-238.2,305.6,-226.7,336.2,-226.7,372.7z" />
+                <animate class="nav-other-paths-out" attributeName="d" dur="0.5s" fill="freeze" calcMode="spline"
+                    keyTimes="0; 1" keySplines=".08,.61,.43,.98" begin="indefinite" to="M273.3,372.7v3.4c-14.9-2.3-30.1-3.5-45.5-3.5H84.3v-62.8c0-27-7.5-46.2-20.7-54.9h104.8c26.7,0,52.9,10.7,71.7,29.3C261.8,305.6,273.3,336.2,273.3,372.7z" />
+            </path>
+
+            <path class="nav-graphic-paths" id="smol-right" d="M310.2,134.9c-17.9,43.3-27.1,92.3-27.1,145.5v41.8c-18.3-55.9-66.7-84.8-114.7-84.8h-11.3V114.2c8.7,13.2,27.9,20.7,54.9,20.7H310.2z">
+                <animate class="nav-other-paths-show" attributeName="d" dur="0.5s" fill="freeze" begin="indefinite"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".08,.65,.43,.98" to="M-189.8,134.9c-17.9,43.3-27.1,92.3-27.1,145.5v41.8c-18.3-55.9-66.7-84.8-114.7-84.8h-11.3V114.2c8.7,13.2,27.9,20.7,54.9,20.7H310.2z" />
+                <animate class="nav-other-paths-out" attributeName="d" dur="0.5s" fill="freeze" calcMode="spline"
+                    keyTimes="0; 1" keySplines=".08,.61,.43,.98" begin="indefinite" to="M310.2,134.9c-17.9,43.3-27.1,92.3-27.1,145.5v41.8c-18.3-55.9-66.7-84.8-114.7-84.8h-11.3V114.2c8.7,13.2,27.9,20.7,54.9,20.7H310.2z" />
+            </path>
+
+            <clipPath id="normal-nav-clip">
+                <path d="M506.2,0c-20.4,28.6-31.7,70.7-31.7,123v910.9c0,103.2-42.8,165.5-78.7,199.6c-44.5,42.3 -105.1,66.5 -166.2,66.5h-606.5V700.1c0-89.1-25.9-166.5-75.2-225.3c-2.5-3-5-5.9-7.6-8.7c-2.1-2.3-4.2-4.6-6.4-6.8c-0.6-0.6-1.3-1.3-1.9-1.9c-29.2-29.6-63.8-52.1-101.8-66.4V280.4c0-54.5,10.8-103.7,31.8-145.5c1.5-3,3-5.8,4.6-8.7c1.6-3,3.3-5.8,5-8.7c9.8-16.4,21.4-31.5,34.6-45.1C-48.7,25.7, 12.5,0, 78.4,0H806.2z">
+                </path>
+            </clipPath>
+
+            <foreignObject x="300" y="0px" width="506.2" height="100%" xmlns="http://www.w3.org/1999/xhtml">
+                <div class="nav-wrapper inWorksSection">
+                    <ul class="nav-links">
+                        <li id="nav-top">
+                            <a href="index.html">
+                                <img class="nav-home isOpen disabled"
+                                    src="images/logo_black_new-min.png" alt="jan michael bibal logo">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#works">Works</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </foreignObject>
+        </svg>
+    </nav>
+
+    <div class="struct-wrapper">
+        <div class="nav-bounding-box"></div>
+        <div class="everything-wrapper resize">
+            <div class="body-wrapper inCaseStudySection">
+                <h1 class="casestudy-title">Philippine Miserior Partnership Inc. - Rights of Nature Advocacy</h1>
+                <h4 class="casestudy-desc">
+                    Digital Animation (With Adobe Animate)
+                </h4>
+                <div class="casestudy-info">
+                    <div class="">
+                        <span class="casestudy-desc-title">Overview</span>
+                        <h4>
+                            “Rights of Nature” is an advocacy of this Filipino NGO known as PMPI, telling us about how nature deserves to have rights just as much as us human beings, since we depend on them to help us survive.
+                            <br> <br>
+                            This is done as a final group project for the subject Multimedia Publishing, consisting of 4 people. The brief was to create a marketing campaign for their advocacy that would inform the public that nature has rights just as much as us citizens do.
+                            <br> <br>
+                            The entire class is assigned the same advocacy, and this is our group’s version of the campaign. It consists of an animation and a website, the animation being the main piece of media that contains the message, and the website serving as a platform for the animation and additional content that supports it
+                            <br> <br>
+                            For this, we have recieved a grade of 3.0 out of 4.0.
+                        </h4>
+                    </div>
+                    <div>
+                        <span class="casestudy-desc-title">Role and Brief</span>
+                        <h4>
+                            This is a school group project in a team of 4, in which we have to create a brand identity
+                            for the advocacy, alongside a website, social media collaterals, brochures, and an animation
+                            to be posted on their facebook and youtube. I was in charge of creating the animation. The
+                            idea for the whole brand is to portray nature as a living, breathing entity, deserving of
+                            our love and empathy.
+                            <br> <br>
+                            My role in this project is the sole animator, wherein I storyboarded and fully animated the cartoon back in 2020.
+                        </h4>
+                    </div>
+                </div>
+                <div class="video-preview-container">
+                    <iframe class="video-preview" src="https://www.youtube.com/embed/xS6e2UuYVIE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <footer class="footer">
+                <div>
+                    <a href="mailto: janmichaelbibal@gmail.com" class="email-links">
+                        <div class="footer-button touch-active-anim anim">
+                            Get in touch
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <a href="mailto: janmichaelbibal@gmail.com" class="footer-links email-links touch-active-anim anim">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h3>janmichaelbibal@gmail.com</h3>
+                    </a>
+                    <a href="https://linkedin.com/in/jan-michael-bibal-081761292" class="footer-links touch-active-anim anim">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <h3>Jan Michael Bibal</h3>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1CamhgRo-RQS6GbtEyphKu7ncZ6Wy3O7M/view?usp=drive_link" class="footer-links touch-active-anim anim">
+                        <i class="fa-solid fa-file"></i>
+                        <h3>PDF Portfolio + Resume</h3>
+                    </a>
+                </div>
+                <div>
+                    <h3>If you're looking to work with me, feel free to get in touch! I'm here to help :)</h3>
+                </div>
+            </footer>
+            <footer class="sub-footer">
+                Made with ♥ by Jan Michael Bibal | © 2023
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
